@@ -2,5 +2,9 @@
   "javascript.validate.enable": false,
   "editor.formatOnSave": true,
   "javascript.format.enable": false,
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "eslint.options": {
+    "configFile": ".eslintrc"
+  },
+  "eslint.autoFixOnSave": true
 }

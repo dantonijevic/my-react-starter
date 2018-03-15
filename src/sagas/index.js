@@ -1,18 +1,17 @@
-
-
 import * as userSaga from './user.saga';
 
-
 const sagas = {
-    ...userSaga
-}
-
+  ...userSaga,
+};
 
 export default function registerSaga(middleware) {
+  console.log('all sagas = ', sagas);
 
-    console.log('all sagas = ', sagas);
+  // for (const name in sagas) {
+  //   middleware.run(sagas[name]);
+  // }
 
-    for (let name in sagas) {
-        middleware.run(sagas[name]);
-    }
+  Object.keys(sagas).forEach((saga) => {
+    middleware.run(sagas[saga]);
+  });
 }

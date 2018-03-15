@@ -1,5 +1,3 @@
-// @flow
-
 import { createAction } from 'redux-actions';
 import * as Immutable from 'immutable';
 
@@ -9,12 +7,13 @@ export const USER_SET_USER_DATA = 'user::set_user_data';
 export const USER_FETCH_USER_REQUESTED = 'user::fetch_user_requested';
 
 const User = (state = initialState, action) => {
+  let newState = state;
   switch (action.type) {
     case USER_SET_USER_DATA:
       console.log('set user data');
-      state = state.set('username', action.payload.username);
-      state = state.set('token', action.payload.token);
-      return state;
+      newState = newState.set('username', action.payload.username);
+      newState = newState.set('token', action.payload.token);
+      return newState;
     default:
       return initialState;
   }
